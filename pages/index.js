@@ -5,13 +5,19 @@ import { projectIcons } from '../components/Icons'
 
 import { projects } from '../utils/projectsData'
 
+const API_URL = `${process.env.API || 'api'}/hello`
+
 const Home = () => {
 	const [message, setMessage] = useState('')
 	const [response, setResponse] = useState('')
+	console.log({
+		dev: process.env.NODE_ENV === 'development',
+		url: API_URL,
+	})
 
 	const fetchData = async () => {
 		try {
-			const response = await fetch('http://localhost:7071/api/hello', {
+			const response = await fetch(API_URL, {
 				method: 'POST',
 				mode: 'cors',
 				headers: {
