@@ -5,6 +5,9 @@
 		},
 		{
 			"route": "/project/*"
+		},
+		{
+			"route": "/api/hello"
 		}
 	]
 }
